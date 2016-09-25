@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+import CoreLocation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,20 +19,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    //#MARK: @IBOutlets
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+    //#MARK: Properties
+    fileprivate var weathers: Weathers!
+    fileprivate var locManager = CLLocationManager()
+    fileprivate var currentLocation: CLLocation!
+    fileprivate var isLocationSet = false
+    
+    //#MARK: Events
+    override func viewWillAppear(_ animated: Bool) {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        locManager.requestWhenInUseAuthorization()
+        setLocation()
+        if(isLocationSet) {
+            weathers = Weathers(lat: currentLocation.coordinate.latitude, lon: currentLocation.coordinate.longitude)
+            weathers.downloadWeathers() {
+                //callback
+                
+                self.tableView.delegate = self
+                self.tableView.dataSource = self
+            }
+        }
+        
+        
+    }
+    
+    //#MARK: TableView Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return weathers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherTableViewCell {
+            let weather = weathers.list[indexPath.row]
+            cell.configCell(weather: weather)
+            
+            return cell
+        }
+        
         return WeatherTableViewCell()
     }
     
@@ -40,9 +68,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 1
     }
     
+    //#MARK: Functions
+    func setLocation() {
+        if(CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedWhenInUse ||
+           CLLocationManager.authorizationStatus() == CLAuthorizationStatus.authorizedAlways) {
+            
+            currentLocation = locManager.location
+            isLocationSet = true
+        }
+
+    }
     
-
-
-
 }
 

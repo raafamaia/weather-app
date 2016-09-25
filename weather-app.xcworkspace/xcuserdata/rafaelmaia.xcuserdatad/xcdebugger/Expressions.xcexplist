@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Weathers._url.getter:Weathers.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "&quot;\(BASE_URL)lat=\(_latitude!)&amp;lon=\(_longitude!)&amp;APPID=\(API_KEY!)&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Weathers.(downloadWeathers(complete : () -&gt; ()) -&gt; ()).(closure #1):Weathers.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self._url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

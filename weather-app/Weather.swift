@@ -13,17 +13,9 @@ class Weather {
     //#MARK: Private Properties
     fileprivate var _day: String!
     fileprivate var _degrees: String!
-    fileprivate var _latitude: Int!
-    fileprivate var _longitude: Int!
     fileprivate var _weather: String!
-    fileprivate var _description: String!
-    fileprivate var _city: String!
     
-    fileprivate var _url: String {
-        get {
-            return "\(BASE_URL)lat=\(_latitude)&lon=\(_longitude)&APPID=\(API_KEY)"
-        }
-    }
+    
     
     //#MARK: Getters/Setters
     var day: String {
@@ -38,27 +30,17 @@ class Weather {
         }
     }
     
-    var latitude: Int {
+    var weather: String {
         get {
-            return _latitude
-        }
-    }
-    
-    var longitude: Int {
-        get {
-            return _longitude
+            return _weather
         }
     }
     
     //#MARK: Constructor
-    init(lat: Int, lon: Int) {
-        self._latitude = lat
-        self._longitude = lon
-    }
-    
-    //#MARK: Constructor
-    func downloadWeather() {
-        
+    init(day: String, degrees: String, weather: String) {
+        self._weather = weather
+        self._degrees = degrees
+        self._day = day
     }
     
 }
