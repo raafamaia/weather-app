@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.0.0)
+  - Freddy (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - Freddy
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Freddy: 367f994c88a90dd3987293b4b1bec94a4530745a
 
-PODFILE CHECKSUM: d7cb3afa6fcb2d5c8d5f207bd05fd67263fbfb2f
+PODFILE CHECKSUM: 8255b860b92a7e919afc2e0620736fabd74a3312
 
 COCOAPODS: 1.0.1

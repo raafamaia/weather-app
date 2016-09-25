@@ -8,4 +8,5 @@ target 'weather-app' do
 
   # Pods for weather-app
   pod 'Alamofire', '~> 4.0'
+  pod 'Freddy'
 end
