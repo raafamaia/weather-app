@@ -70,7 +70,7 @@ class Weathers {
                 self._description = json["list"][0]["weather"][0]["description"].string
                 self._weathers = json["list"].arrayValue.map(Weather.init)
                 
-                for _ in 1...2 {
+                for _ in 1...1 {
                     self._weathers.remove(at: self._weathers.count - 1) //#FIX: API retornando 5 itens com count de 5
                 }
                 

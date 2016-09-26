@@ -55,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //#MARK: TableView Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weathers.count
+        return weathers.count - 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -65,7 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherTableViewCell {
-            let weather = weathers.list[indexPath.row]
+            let weather = weathers.list[indexPath.row + 1]
             cell.configCell(weather: weather)
             
             return cell

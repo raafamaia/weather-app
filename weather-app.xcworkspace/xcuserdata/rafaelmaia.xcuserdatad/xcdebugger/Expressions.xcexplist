@@ -14,13 +14,40 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Weather.init(json : JSON) -&gt; Weather:Weather.swift">
+         contextName = "ViewController.setLocation() -&gt; ():ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self._date">
+               value = "locManager.location">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Weathers.(downloadWeathers(complete : () -&gt; ()) -&gt; ()).(closure #1):Weathers.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json">
             </PersistentString>
             <PersistentString
-               value = "self._description">
+               value = "self._url">
+            </PersistentString>
+            <PersistentString
+               value = "self._city">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentLocation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.init(coder : NSCoder) -&gt; ViewController?:ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "locManager.location">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -28,16 +55,13 @@
          contextName = "Weathers.city.getter:Weathers.swift">
       </ContextState>
       <ContextState
-         contextName = "Weathers.(downloadWeathers(complete : () -&gt; ()) -&gt; ()).(closure #1):Weathers.swift">
+         contextName = "Weather.init(json : JSON) -&gt; Weather:Weather.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self._url">
+               value = "self._date">
             </PersistentString>
             <PersistentString
-               value = "self._city">
-            </PersistentString>
-            <PersistentString
-               value = "json">
+               value = "self._description">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
