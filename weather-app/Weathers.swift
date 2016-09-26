@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class Weathers {
     
@@ -20,7 +21,7 @@ class Weathers {
     
     fileprivate var _url: String {
         get {
-            return "\(BASE_URL!)lat=\(_latitude!)&lon=\(_longitude!)&APPID=\(API_KEY!)"
+            return "\(BASE_URL!)lat=\(_latitude!)&lon=\(_longitude!)&\(COUNT!)&\(CELSIUS!)&APPID=\(API_KEY!)"
         }
     }
     
@@ -37,6 +38,18 @@ class Weathers {
         }
     }
     
+    var city: String {
+        get {
+            return _city
+        }
+    }
+    
+    var description: String {
+        get {
+            return _description
+        }
+    }
+    
     //#MARK: Constructors
     init(lat: Double, lon: Double){
         self._latitude = lat
@@ -45,8 +58,27 @@ class Weathers {
     
     //#MARK: Functions
     func downloadWeathers(complete: @escaping DownloadComplete) {
-        Alamofire.request(self._url).responseJSON { response in
-            print(response)
+
+        Alamofire.request(self._url).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                
+                let json = JSON(value)
+                
+                print(json)
+                self._city = json["city"]["name"].string
+                self._description = json["list"][0]["weather"][0]["description"].string
+                self._weathers = json["list"].arrayValue.map(Weather.init)
+                
+                for _ in 1...2 {
+                    self._weathers.remove(at: self._weathers.count - 1) //#FIX: API retornando 5 itens com count de 5
+                }
+                
+                complete()
+            
+            case .failure(let err):
+                print("Ops, something went wrong. Error: \(err)")
+            }
         }
     }
 }

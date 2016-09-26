@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun-bg" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-k2-wVG"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moon-bg" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-k2-wVG"/>
                             <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-CE-XUa">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudy-bottom" translatesAutoresizingMaskIntoConstraints="NO" id="AMn-yw-drw">
@@ -38,7 +38,7 @@
                                             <constraint firstAttribute="height" constant="41" id="0Oa-1z-u8T"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Archive" family="Archive" pointSize="30"/>
-                                        <color key="textColor" red="0.14491152869999999" green="0.73093140779999999" blue="0.79964557150000004" alpha="0.56140303940000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.14509803921568626" green="0.72941176470588232" blue="0.80000000000000004" alpha="0.56140303940000003" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONDAY | SEP 12 | 12:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrX-dO-Sdf">
@@ -57,7 +57,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZj-Jq-fic">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="IUU-Fr-ji6"/>
+                                            <constraint firstAttribute="width" constant="129" id="IUU-Fr-ji6"/>
                                             <constraint firstAttribute="height" constant="78.5" id="QHO-ep-lZg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Archive" family="Archive" pointSize="65"/>
@@ -81,20 +81,23 @@
                                     <constraint firstItem="IZj-Jq-fic" firstAttribute="top" secondItem="fFx-CE-XUa" secondAttribute="top" constant="104" id="zhi-cR-AUB"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AV5-EQ-cNU">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AV5-EQ-cNU">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="311" id="gXT-SP-wnD"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="54" id="c8j-zm-CQ8" customClass="WeatherTableViewCell" customModule="weather_app" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="54"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" id="c8j-zm-CQ8" customClass="WeatherTableViewCell" customModule="weather_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c8j-zm-CQ8" id="9pk-DW-4Zy">
-                                            <frame key="frameInset" width="375" height="53"/>
+                                            <frame key="frameInset" width="375" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ok-ja-1Xc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="62" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ok-ja-1Xc">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="62" id="0nl-ga-1B4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Archive" family="Archive" pointSize="20"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -106,6 +109,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtA-d2-QcU">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="62" id="1av-UO-QfV"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Archive" family="Archive" pointSize="30"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -160,7 +166,7 @@
     </scenes>
     <resources>
         <image name="cloudy-bottom" width="375" height="200"/>
-        <image name="sun-bg" width="750" height="1334"/>
+        <image name="moon-bg" width="750" height="1334"/>
         <image name="sunny" width="132" height="131"/>
         <image name="thunderstorm" width="136" height="131"/>
     </resources>

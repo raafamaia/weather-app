@@ -3,18 +3,41 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Weathers._url.getter:Weathers.swift">
+         contextName = "ViewController.(viewDidLoad() -&gt; ()).(closure #1):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "&quot;\(BASE_URL)lat=\(_latitude!)&amp;lon=\(_longitude!)&amp;APPID=\(API_KEY!)&quot;">
+               value = "self.weathers.list">
+            </PersistentString>
+            <PersistentString
+               value = "self.weathers.list[0].degrees">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Weather.init(json : JSON) -&gt; Weather:Weather.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self._date">
+            </PersistentString>
+            <PersistentString
+               value = "self._description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Weathers.city.getter:Weathers.swift">
       </ContextState>
       <ContextState
          contextName = "Weathers.(downloadWeathers(complete : () -&gt; ()) -&gt; ()).(closure #1):Weathers.swift">
          <PersistentStrings>
             <PersistentString
                value = "self._url">
+            </PersistentString>
+            <PersistentString
+               value = "self._city">
+            </PersistentString>
+            <PersistentString
+               value = "json">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

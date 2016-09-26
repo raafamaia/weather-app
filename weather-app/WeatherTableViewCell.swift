@@ -34,7 +34,7 @@ class WeatherTableViewCell: UITableViewCell {
         self.day.text = _weather.day
         self.degrees.text = _weather.degrees
         
-        self.icon.image = UIImage.init(named: "sunny") //#TODO: see the API
+        self.icon.image = _weather.icon
     }
 
 }
